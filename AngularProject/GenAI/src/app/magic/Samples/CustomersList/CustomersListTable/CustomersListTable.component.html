@@ -1,0 +1,106 @@
+<div novalidate [formGroup]="screenFormGroup">
+    <div [magic]="mgc.CustomersListTable">
+        <div class="table-wrapper twenty-rows">
+            <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear
+                (matSortChange)="tableService.sortData($event)">
+
+                <ng-container [magic]="mgc.cID" [matColumnDef]="mgc.cID">
+                    <mat-header-cell *matHeaderCellDef class="col-1">
+                        Code
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer" class="col-1">
+                        <div *ngIf="mg.ifRowCreated(row)">
+                            <div [formGroup]="mg.getFormGroupByRow(row.rowId)">
+                                {{mg.getValue(mgc.CustomerID, row.rowId)}}
+                            </div>
+                        </div>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container [magic]="mgc.cName" [matColumnDef]="mgc.cName">
+                    <mat-header-cell *matHeaderCellDef class="col-2">
+                        Name
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer" class="col-2">
+                        <div *ngIf="mg.ifRowCreated(row)">
+                            <div [formGroup]="mg.getFormGroupByRow(row.rowId)">
+                                {{mg.getValue(mgc.CustomerName, row.rowId)}}
+                            </div>
+                        </div>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container [magic]="mgc.cEmail" [matColumnDef]="mgc.cEmail">
+                    <mat-header-cell *matHeaderCellDef class="col-4">
+                        Email
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer" class="col-4">
+                        <div *ngIf="mg.ifRowCreated(row)">
+                            <div [formGroup]="mg.getFormGroupByRow(row.rowId)">
+                                {{mg.getValue(mgc.CustomerEmail, row.rowId) }}
+                            </div>
+                        </div>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container [magic]="mgc.cActive" [matColumnDef]="mgc.cActive">
+                    <mat-header-cell *matHeaderCellDef class="col-1">
+                        Active
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer" class="col-1">
+                        <div *ngIf="mg.ifRowCreated(row)">
+                            <div [formGroup]="mg.getFormGroupByRow(row.rowId)">
+                                <mat-checkbox [magic]="mgc.ActiveCustomer" [rowId]="row.rowId"
+                                    [formControlName]="mgc.ActiveCustomer">
+                                </mat-checkbox>
+                            </div>
+                        </div>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container [magic]="mgc.cParentCustomer" [matColumnDef]="mgc.cParentCustomer">
+                    <mat-header-cell *matHeaderCellDef class="col-2">
+                        Parent
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer" class="col-2">
+                        <div *ngIf="mg.ifRowCreated(row)">
+                            {{mg.getValue(mgc.ParentCustomer, row.rowId) }}
+                        </div>
+                    </mat-cell>
+                </ng-container>
+
+                <ng-container [magic]="mgc.cActions" [matColumnDef]="mgc.cActions">
+                    <mat-header-cell *matHeaderCellDef class="col-2 cActions">
+                        Actions
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer" class="col-2 cBtn">
+                        <div *ngIf="mg.ifRowCreated(row)">
+                            <button class="tbl_btn" [magic]="mgc.bEdit" [rowId]="row.rowId" [matTooltip]="'Edit'">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </div>
+                        <div *ngIf="mg.ifRowCreated(row)">
+                            <button class="tbl_btn" [magic]="mgc.bDelete" [rowId]="row.rowId" [matTooltip]="'Delete'"
+                                [disabled]="mg.isDisabled(mgc.bDelete, row.rowId)">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                        <div *ngIf="mg.ifRowCreated(row)">
+                            <button class="tbl_btn" [magic]="mgc.bGotoObject" [rowId]="row.rowId"
+                                [matTooltip]="'Go to Customer'" [disabled]="mg.isDisabled(mgc.bGotoObject, row.rowId)">
+                                <i class="fa fa-up-right-from-square"></i>
+                            </button>
+                        </div>
+                    </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;" class="table_row"
+                    [ngClass]="{ 'selected': selection.isSelected(row)}" [magicRow]="row?.rowId"
+                    (click)="row? tableService.selectRow(row.rowId) : null">
+                </mat-row>
+            </mat-table>
+            <mat-paginator #paginator [pageSize]="20" (page)="tableService.mgOnPaginateChange($event)"></mat-paginator>
+        </div>
+    </div>
+</div>

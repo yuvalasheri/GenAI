@@ -1,0 +1,27 @@
+MagicIDs/branchids*.*
+Application/
+Backup/
+ECF/
+File to keep/
+Log/
+SQL/
+Temp/
+LocalBackup.bat
+Readme.txt
+
+
+node_modules/
+
+
+ProgramHeaders.xml
+DataSourcesIndex.xml
+*.log
+*.lock
+*.opt
+*.sln
+*.suo
+*.xpaproj
+sqlite.sqlite
+/*.optback
+*.XRF
+logFile.txt

@@ -1,0 +1,44 @@
+<div novalidate [formGroup]="screenFormGroup">
+    <div [magic]="mgc.CustomersCrud">
+
+        <div class="overlay-bar">
+            <span>
+                {{ mg.getCustomProperty(mgc.CustomersCrud, 'WindowTitle') }}
+            </span>
+        </div>
+
+        <div class="row py-4 px-2">
+            <div class="col-10">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Customer Name</mat-label>
+                    <input matInput type="text" [magic]="mgc.vName" [formControlName]="mgc.vName" mgFormat
+                        maxlength="49">
+                </mat-form-field>
+            </div>
+
+            <div class="col-2">
+                <mat-checkbox [magic]="mgc.vActive" [formControlName]="mgc.vActive" class="CenterAlign">
+                    Active
+                </mat-checkbox>
+            </div>
+
+            <div class="col mt-4">
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" [magic]="mgc.vEmail" [formControlName]="mgc.vEmail" mgFormat
+                        maxlength="32">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button class="action-button cancel-button" accesskey="c" [magic]="mgc.bCancel">
+                Cancel
+            </button>
+            <button class="action-button" accesskey="s" [magic]="mgc.bSave">
+                Save
+            </button>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,7 @@
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+@font-face {
+    font-family: 'Assistant';
+    src: url('assets/Assistant-VariableFont_wght.ttf');
+}

@@ -1,0 +1,252 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"Report",
+		"component_path":	"Report/",
+		"component_uniquename":	"Report_Report"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	609,
+		"height":	242
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"vSearch",
+				"mgformat":	"mgFormat",
+				"attribute":	"A",
+				"common_line_id":	"line13"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	13,
+				"width":	163,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"sGenAI",
+				"common_line_id":	"line13"
+			},
+			"coordinates":	{
+				"x":	267,
+				"y":	13,
+				"width":	192,
+				"height":	158
+			},
+			"hint":	null,
+			"controlType":	"F",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"vReportDateFrom",
+				"mgformat":	"mgFormat",
+				"attribute":	"D",
+				"common_line_id":	"line40"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	40,
+				"width":	78,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"vReportDateTo",
+				"mgformat":	"mgFormat",
+				"attribute":	"D",
+				"common_line_id":	"line40"
+			},
+			"coordinates":	{
+				"x":	98,
+				"y":	40,
+				"width":	78,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"bAdd",
+				"format":	"Add",
+				"common_line_id":	"line40"
+			},
+			"coordinates":	{
+				"x":	223,
+				"y":	40,
+				"width":	29,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Table4",
+				"table_row_height":	26,
+				"table_title_height":	19,
+				"common_line_id":	"line67"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	67,
+				"width":	240,
+				"height":	104
+			},
+			"hint":	null,
+			"controlType":	"A",
+			"children":	[
+				{
+					"style":	null,
+					"props":	{
+						"id":	"Column5",
+						"column_title":	"DailyReportDate",
+						"sortable":	true,
+						"is_table_child":	true,
+						"web_style":	2
+					},
+					"coordinates":	{
+						"width":	89
+					},
+					"hint":	null,
+					"controlType":	"K",
+					"children":	[
+						{
+							"style":	null,
+							"props":	{
+								"id":	"DailyReportDate",
+								"formatter":	"magicDate",
+								"mgformat":	"mgFormat",
+								"attribute":	"D",
+								"is_table_child":	true,
+								"web_style":	2,
+								"common_line_id":	"line90"
+							},
+							"coordinates":	{
+								"x":	17,
+								"y":	90,
+								"width":	78,
+								"height":	20
+							},
+							"hint":	null,
+							"controlType":	"T",
+							"children":	null
+						}
+					]
+				},
+				{
+					"style":	null,
+					"props":	{
+						"id":	"Column7",
+						"column_title":	"Detail",
+						"is_table_child":	true,
+						"web_style":	2
+					},
+					"coordinates":	{
+						"width":	104
+					},
+					"hint":	null,
+					"controlType":	"K",
+					"children":	[
+						{
+							"style":	null,
+							"props":	{
+								"id":	"Detail",
+								"password_edit":	false,
+								"attribute":	"O",
+								"is_table_child":	true,
+								"web_style":	2,
+								"common_line_id":	"line90"
+							},
+							"coordinates":	{
+								"x":	106,
+								"y":	90,
+								"width":	96,
+								"height":	20
+							},
+							"hint":	null,
+							"controlType":	"T",
+							"children":	null
+						}
+					]
+				},
+				{
+					"style":	null,
+					"props":	{
+						"id":	"Column9",
+						"is_table_child":	true,
+						"web_style":	2
+					},
+					"coordinates":	{
+						"width":	36
+					},
+					"hint":	null,
+					"controlType":	"K",
+					"children":	[
+						{
+							"style":	null,
+							"props":	{
+								"id":	"bEdit",
+								"format":	"Edit",
+								"is_table_child":	true,
+								"web_style":	2,
+								"row_editing_type":	0,
+								"common_line_id":	"line90"
+							},
+							"coordinates":	{
+								"x":	210,
+								"y":	90,
+								"width":	28,
+								"height":	22
+							},
+							"hint":	null,
+							"controlType":	"B",
+							"children":	null
+						}
+					]
+				}
+			]
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"StandaloneDetail",
+				"password_edit":	false,
+				"dataexp":	true,
+				"modifiable":	false,
+				"common_line_id":	"line178"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	178,
+				"width":	96,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		}
+	]
+}

@@ -1,0 +1,92 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"ReportCrud",
+		"window_type":	12,
+		"custom_properties":	[
+			"WindowTitle"
+		],
+		"component_path":	"ReportCrud/",
+		"component_uniquename":	"ReportCrud_ReportCrud"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	0,
+		"height":	0
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"vDate",
+				"mgformat":	"mgFormat",
+				"attribute":	"D",
+				"common_line_id":	"line13"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	13,
+				"width":	78,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"vDetails",
+				"password_edit":	false,
+				"attribute":	"O",
+				"common_line_id":	"line40"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	40,
+				"width":	34,
+				"height":	20
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"bSave",
+				"format":	"Save",
+				"common_line_id":	"line67"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	67,
+				"width":	35,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"bCancel",
+				"format":	"Cancel",
+				"common_line_id":	"line67"
+			},
+			"coordinates":	{
+				"x":	55,
+				"y":	67,
+				"width":	43,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		}
+	]
+}

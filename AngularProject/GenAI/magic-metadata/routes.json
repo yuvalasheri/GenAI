@@ -1,0 +1,25 @@
+[
+	{
+		"module_name":	"",
+		"routesArray":	[
+			{
+				"RouteName":	"CustomersList",
+				"ModuleName":	"Samples",
+				"OutletName":	"",
+				"children":	null
+			},
+			{
+				"RouteName":	"Report",
+				"ModuleName":	"Samples",
+				"OutletName":	"",
+				"children":	null
+			}
+		]
+	},
+	{
+		"module_name":	"Samples",
+		"routesArray":	[
+			
+		]
+	}
+]

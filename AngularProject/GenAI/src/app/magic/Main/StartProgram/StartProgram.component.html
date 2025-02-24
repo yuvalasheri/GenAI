@@ -1,0 +1,90 @@
+<div novalidate [formGroup]="screenFormGroup">
+    <div [magic]="mgc.StartProgram">
+
+        <!-- ------------------------- Logged in Area ------------------------- -->
+
+        <div *ngIf="mg.getCustomProperty('StartProgram', 'isLoggedIn') == 'Y'">
+
+            <div class="navbar-left">
+                <a routerLink="/" class="navbar-logo" [matTooltip]="mg.getCustomProperty('StartProgram', 'Version')">
+                    <i class="fa fa-home home-icon"></i>
+                </a>
+
+                <!-- Optional - 
+                 hide the menu with a condition:
+                 *ngIf="mg.getCustomProperty('StartProgram', 'Menu1') != 'N'" 
+                -->
+                <div class="navbar-itembox" (click)="HighLightMenu($event)" [magic]="mgc.bMenu1">
+                    <i class="fa fa-copy navbar-icon"></i>
+                    <label class="navbar-item">Samples</label>
+                </div>
+                <div class="navbar-itembox" (click)="HighLightMenu($event)" [magic]="mgc.bGenAI">
+                    <i class="fa fa-book navbar-icon"></i>
+                    <label class="navbar-item">GenAI</label>
+                </div>
+
+            </div>
+
+            <div class="main">
+                <div class="navbar-top">
+                    <div class="notifications">
+                        <!-- Replace with company icon -->
+                        <img src="https://www.magicsoftware.com/wp-content/uploads/2018/05/magic-logo-blue@3x.png"
+                            alt="Magic Software" class="magic-notificon" />
+
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+
+                        <label class="employee d-flex align-items-center">
+                            <i class="fa fa-circle-user mx-2"></i>
+                            <b>Hello, </b> username here
+                        </label>
+
+                        <div>
+                            <span
+                                [style.visibility]="mg.getCustomProperty('StartProgram', 'OpenTasks') == 0 ? 'hidden' : 'visible'"
+                                [matTooltip]="'My Notifications'">
+                                <span class="badge-content ">
+                                    {{ mg.getCustomProperty('StartProgram', 'OpenTasks') }}
+                                </span>
+                            </span>
+
+                            <i class="fa-regular fa-bell icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-outlet">
+                    <router-outlet [magic]="mgc.MainOutlet"> </router-outlet>
+                </div>
+            </div>
+
+            <div id="side-nav" #SideNav class="side-nav side-nav-state" (mouseleave)="closeMenu()">
+                <side-menu [source]="mg.getCustomProperty('StartProgram', 'Menu')"></side-menu>
+            </div>
+        </div>
+
+        <!-- ------------------------- Login Area ------------------------- -->
+
+        <div *ngIf="mg.getCustomProperty('StartProgram', 'isLoggedIn') != 'Y'" class="login-container">
+
+            <label class="login-title ">System Login</label>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Username</mat-label>
+                <input matInput mgFormat type='text' name="username" autocomplete="username" id="username"
+                    [magic]="mgc.vUsername" [formControlName]="mgc.vUsername" (blur)="SetValue()"
+                    onkeydown="if(event.key === 'Enter') document.getElementById('LoginButton').click();">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Password</mat-label>
+                <input matInput type='password' mgFormat name="password" autocomplete="password" id="password"
+                    [magic]="mgc.vPassword" [formControlName]="mgc.vPassword"
+                    onkeydown="if(event.key === 'Enter') document.getElementById('LoginButton').click();">
+            </mat-form-field>
+
+            <button [magic]="mgc.bLogin" class="action-button w-100" style="width: 100%" accesskey="l" id="LoginButton">
+                Login
+            </button>
+        </div>
+    </div>
+</div>

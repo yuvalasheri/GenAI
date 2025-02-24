@@ -1,0 +1,4 @@
+1. Delete the cache folder in the following path: AngularProject\youprojectname\src\assets\cache.
+2. In the Magic xpa studio click on web>prepare for deployment and create an ecf.
+3. Run the build script in this folder.
+4. Copy the files from filetokeep folder to the application folder.

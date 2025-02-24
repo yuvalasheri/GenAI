@@ -1,0 +1,109 @@
+<div novalidate [formGroup]="screenFormGroup">
+    <div [magic]="mgc.Report">
+        <div class="row">
+            <div class="col-8 px-2">
+                <div class="table-container">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="searchbox-container w-100">
+                                <i class="fa fa-search"></i>
+                                <input matInput type='text' matInput [magic]="mgc.vSearch"
+                                    [formControlName]="mgc.vSearch" mgFormat placeholder="Search..." class="w-100"
+                                    [pollTime]="400">
+                            </div>
+                        </div>
+
+                        <div class="col-2 px-2">
+                            <mat-form-field [magic]="mgc.vReportDateFrom" appearance="outline" class="no-parent w-100">
+                                <mat-label>From Date</mat-label>
+                                <input matInput [matDatepicker]="vReportDateFrom" [magic]="mgc.vReportDateFrom"
+                                    [formControlName]="mgc.vReportDateFrom" mgFormat>
+                                <mat-datepicker-toggle matSuffix [for]="vReportDateFrom"></mat-datepicker-toggle>
+                                <mat-datepicker #vReportDateFrom></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-2 px-2">
+                            <mat-form-field [magic]="mgc.vReportDateTo" appearance="outline" class="no-parent w-100">
+                                <mat-label>To Date</mat-label>
+                                <input matInput [matDatepicker]="vReportDateTo" [magic]="mgc.vReportDateTo"
+                                    [formControlName]="mgc.vReportDateTo" mgFormat>
+                                <mat-datepicker-toggle matSuffix [for]="vReportDateTo"></mat-datepicker-toggle>
+                                <mat-datepicker #vReportDateTo></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-5">
+                            <button class="table-header-button" [magic]="mgc.bAdd">
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <label class="header-button-label">Add</label>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="table-wrapper">
+                            <mat-table #table [dataSource]="dataSource" class="container_border" matSort
+                                matSortDisableClear (matSortChange)="tableService.sortData($event)">
+                                <ng-container [magic]="mgc.Column5" [matColumnDef]="mgc.Column5">
+                                    <mat-header-cell *matHeaderCellDef mat-sort-header class="col-1">
+                                        Report Date
+                                    </mat-header-cell>
+                                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer" class="col-1">
+                                        <div *ngIf="mg.ifRowCreated(row)">
+                                            {{mg.getValue(mgc.DailyReportDate, row.rowId) | magicDate :
+                                            mgc.DailyReportDate}}
+                                        </div>
+                                    </mat-cell>
+                                </ng-container>
+                                <ng-container [magic]="mgc.Column7" [matColumnDef]="mgc.Column7">
+                                    <mat-header-cell *matHeaderCellDef class="col-10">
+                                        Report Details
+                                    </mat-header-cell>
+                                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer" class="col-10">
+                                        <div *ngIf="mg.ifRowCreated(row)">
+                                            {{mg.getValue(mgc.Detail, row.rowId) }}
+                                        </div>
+                                    </mat-cell>
+                                </ng-container>
+                                <ng-container [magic]="mgc.Column9" [matColumnDef]="mgc.Column9">
+                                    <mat-header-cell *matHeaderCellDef class="col-1 cActions">
+                                    </mat-header-cell>
+                                    <mat-cell *matCellDef="let row" magicMark="magicTableRowContainer"
+                                        class="col-1 cBtn">
+                                        <div *ngIf="mg.ifRowCreated(row)">
+                                            <button class="tbl_btn" [magic]="mgc.bEdit" [rowId]="row.rowId"
+                                                [matTooltip]="'Edit Report'">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                        </div>
+                                    </mat-cell>
+                                </ng-container>
+                                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                                <mat-row *matRowDef="let row; columns: displayedColumns;" class="table_row"
+                                    [ngClass]="{ 'selected': selection.isSelected(row)}" [magicRow]="row?.rowId"
+                                    (click)="row? tableService.selectRow(row.rowId) : null">
+                                </mat-row>
+                            </mat-table>
+                            <mat-paginator #paginator [pageSize]="1000"
+                                (page)="tableService.mgOnPaginateChange($event)">
+                            </mat-paginator>
+                        </div>
+
+                        <div class="row">
+                            <div class="Answer DetailsPane">
+                                <B>Report Details:</B><br>
+                                {{mg.getValue(mgc.StandaloneDetail) }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-4 px-2">
+                <magic-subform [magic]="mgc.sGenAI">
+                </magic-subform>
+            </div>
+        </div>
+    </div>
+</div>

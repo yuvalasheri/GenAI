@@ -1,0 +1,72 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"ReportGenAI",
+		"component_path":	"Report/ReportGenAI/",
+		"component_uniquename":	"Report_ReportGenAI_ReportGenAI"
+	},
+	"coordinates":	{
+		"x":	0,
+		"y":	0,
+		"width":	0,
+		"height":	325
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"vQuestion",
+				"mgformat":	"mgFormat",
+				"attribute":	"A",
+				"common_line_id":	"line13"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	13,
+				"width":	146,
+				"height":	71
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"bGenRes",
+				"format":	"GenRes",
+				"common_line_id":	"line13"
+			},
+			"coordinates":	{
+				"x":	165,
+				"y":	13,
+				"width":	49,
+				"height":	22
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Answer",
+				"password_edit":	false,
+				"dataexp":	true,
+				"modifiable":	false,
+				"common_line_id":	"line90"
+			},
+			"coordinates":	{
+				"x":	13,
+				"y":	90,
+				"width":	146,
+				"height":	129
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		}
+	]
+}
